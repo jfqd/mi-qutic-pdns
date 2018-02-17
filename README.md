@@ -48,5 +48,5 @@ EOF
 
 ## Notes
 
-* on update to 4.1.1 we nood to run: "ALTER TABLE domains MODIFY notified_serial INT UNSIGNED DEFAULT NULL;"
-* Recursion was removed from the Authoritative Server in version 4.1.0: https://doc.powerdns.com/authoritative/guides/recursion.html
+* on update to 4.1.1 run: ```ALTER TABLE domains MODIFY notified_serial INT UNSIGNED DEFAULT NULL;```
+* [Recursion was removed from the Authoritative Server in version 4.1.0](https://doc.powerdns.com/authoritative/guides/recursion.html)
