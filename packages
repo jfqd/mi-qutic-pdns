@@ -1,0 +1,6 @@
+# 4.1.0 pdns-setup (dnsdist: 1.2.0)
+pdns-recursor
+powerdns
+powerdns-geoip
+powerdns-mysql
+dnsdist
