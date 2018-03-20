@@ -1,7 +1,7 @@
 name="qutic-pdns"
 organization="qutic development"
 brand="pdns Instance"
-version="17.4.0"
+version="17.4.1"
 description="qutic pdns image"
 homepage="https://github.com/jfqd/mi-qutic-pdns"
 users="root admin"

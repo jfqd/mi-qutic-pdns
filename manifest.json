@@ -1,6 +1,6 @@
 {
   "name":         "qutic-pdns",
-  "version":      "17.4.0",
+  "version":      "17.4.1",
   "description":  "qutic powerdns image",
   "organization": "qutic development",
   "brand":        "powerdns 4.1.0 Instance",
