@@ -4,7 +4,7 @@ use [joyent/mibe](https://github.com/joyent/mibe) to create a provisionable imag
 
 ## installation
 
-The following sample can be used to create a zone running a copy of the the worker image.
+The following sample can be used to create a zone running a copy of the the pdns image.
 
 ```
 IMAGE_UUID=$(imgadm list | grep 'qutic-pdns' | tail -1 | awk '{ print $1 }')
@@ -45,6 +45,12 @@ vmadm create << EOF
 }
 EOF
 ```
+- server_id (ns.esample.com)
+- listen_ip 53
+- listen_port 0.0.0.0
+- axfr_ips 192.168.1.100
+- master (yes|no)
+- slave (yes|no)
 
 ## Notes
 

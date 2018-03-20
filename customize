@@ -5,10 +5,21 @@ PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
 # Exit if any commands fail
 set -o errexit
 
+MUNIN_PLUGINS="
+	pdns_errors
+	pdns_latency
+	pdns_queries
+	pdns_queue_size
+"
 
+echo "* Activate munin plugins"
+/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 # Configuring image specific packages
 echo "* Configuring image specific packages.";
+
+groupadd -g 1101 pdns
+useradd -u 1101 -g pdns pdns
 
 # Clean up
 echo "* Cleaning up."
