@@ -45,14 +45,19 @@ vmadm create << EOF
 }
 EOF
 ```
+
+## Notes
+
+* on update to 4.1.1 run: ```ALTER TABLE domains MODIFY notified_serial INT UNSIGNED DEFAULT NULL;```
+* [Recursion was removed from the Authoritative Server in version 4.1.0](https://doc.powerdns.com/authoritative/guides/recursion.html)
+
+## Todo
+
+Add configuration for:
+
 - server_id (ns.esample.com)
 - listen_ip 53
 - listen_port 0.0.0.0
 - axfr_ips 192.168.1.100
 - master (yes|no)
 - slave (yes|no)
-
-## Notes
-
-* on update to 4.1.1 run: ```ALTER TABLE domains MODIFY notified_serial INT UNSIGNED DEFAULT NULL;```
-* [Recursion was removed from the Authoritative Server in version 4.1.0](https://doc.powerdns.com/authoritative/guides/recursion.html)
