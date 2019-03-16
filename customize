@@ -21,6 +21,24 @@ echo "* Configuring image specific packages.";
 groupadd -g 1101 pdns
 useradd -u 1101 -g pdns pdns
 
+echo "* fix dnsdist smf"
+sed -i 's#<property_group name="dnsdist" type="application">#<property_group name="application" type="application">#' \
+  /opt/local/lib/svc/manifest/dnsdist.xml
+
+svccfg import /opt/local/lib/svc/manifest/dnsdist.xml
+
+echo "* enable pdns"
+svcadm enable svc:/pkgsrc/pdns:default
+svcadm enable svc:/pkgsrc/dnsdist:default
+#svcadm enable svc:/pkgsrc/pdns-recursor:default
+
+# create log file
+touch /var/log/pdns.log
+
+echo "* add stub my.cnf file"
+touch /root/.my.cnf
+chmod 0400 /root/.my.cnf
+
 # Clean up
 echo "* Cleaning up."
 rm /root/customize
