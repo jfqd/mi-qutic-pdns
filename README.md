@@ -51,6 +51,12 @@ EOF
 * on update to 4.1.1 run: ```ALTER TABLE domains MODIFY notified_serial INT UNSIGNED DEFAULT NULL;```
 * [Recursion was removed from the Authoritative Server in version 4.1.0](https://doc.powerdns.com/authoritative/guides/recursion.html)
 
+List active dnsdist-servers
+
+``` dnsdist -C /opt/local/etc/dnsdist.conf -c 127.0.0.1:5200
+> showServers()
+```
+
 ## Todo
 
 Add configuration for:
