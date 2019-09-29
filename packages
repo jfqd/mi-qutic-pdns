@@ -1,5 +1,5 @@
 # 4.1.8 pdns-setup (dnsdist: 1.3.3)
-pdns-recursor
+# pdns-recursor
 powerdns
 powerdns-geoip
 powerdns-mysql
