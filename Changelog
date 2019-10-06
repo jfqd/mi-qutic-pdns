@@ -1,5 +1,9 @@
 # Changelog
 
+## 20181018.1
+
+* parameterize powerdns config
+
 ## 20181018.0
 
 * use trunk as base image
