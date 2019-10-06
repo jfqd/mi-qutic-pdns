@@ -37,7 +37,7 @@ fi
 
 if mdata-get pdns_local_port 1>/dev/null 2>&1; then
   MDATA_VALUE=`mdata-get pdns_local_port`
-  sed -i "s| |${MDATA_VALUE}|" /opt/local/etc/pdns.conf
+  sed -i "s|local-port=53|local-port=${MDATA_VALUE}|" /opt/local/etc/pdns.conf
 fi
 
 if mdata-get pdns_master 1>/dev/null 2>&1; then
