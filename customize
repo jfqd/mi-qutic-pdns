@@ -32,6 +32,9 @@ svccfg import /opt/local/lib/svc/manifest/dnsdist.xml
 # svcadm enable svc:/pkgsrc/dnsdist:default
 # svcadm enable svc:/pkgsrc/pdns-recursor:default
 
+echo "* enable firewall"
+svcadm enable svc:/network/ipfilter:default
+
 # create log file
 touch /var/log/pdns.log
 
