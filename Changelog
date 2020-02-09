@@ -1,5 +1,13 @@
 # Changelog
 
+## 20191127.0
+
+* use latest smartos image 20191127
+* fix local-port config
+* enable firewall
+* fix munin plugins
+* add mysql fallback option
+
 ## 20181018.1
 
 * parameterize powerdns config

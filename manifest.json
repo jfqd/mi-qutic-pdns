@@ -1,11 +1,11 @@
 {
   "name":         "qutic-pdns",
-  "version":      "20181018.1",
+  "version":      "20191127.0",
   "description":  "qutic powerdns image",
   "organization": "qutic development",
   "brand":        "powerdns 4.1.8 Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-pdns",
-  "base":         "15eddb38-d9ec-11e9-99c5-4ba3253bb0c7",
+  "base":         "a475fbce-2f1e-11ea-b689-cf5f8caa6cb4",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},
