@@ -19,13 +19,21 @@ echo "* Activate munin plugins"
 echo "* Configuring image specific packages.";
 
 groupadd -g 1101 pdns
-useradd -u 1101 -g pdns pdns
+useradd -m -s /usr/bin/bash -d /var/run/pdns -u 1101 -g pdns pdns
+passwd -N pdns
+passwd -d pdns
 
 echo "* fix dnsdist smf"
 sed -i \
   's#<property_group name="dnsdist" type="application">#<property_group name="application" type="application">#' \
   /opt/local/lib/svc/manifest/dnsdist.xml
 svccfg import /opt/local/lib/svc/manifest/dnsdist.xml
+
+echo "* fix pdns rights"
+chown -R pdns:pdns /var/run/pdns
+chown root:pdns /opt/local/etc/pdns.conf
+chmod 0640 /opt/local/etc/pdns.conf
+chown -R pdns:pdns /opt/local/lib/pdns/
 
 # echo "* enable pdns services"
 # svcadm enable svc:/pkgsrc/pdns:default
@@ -36,7 +44,9 @@ echo "* enable firewall"
 svcadm enable svc:/network/ipfilter:default
 
 # create log file
-touch /var/log/pdns.log
+mkdir -p /var/log/pdns/
+touch /var/log/pdns/pdns.log
+chown -R pdns:pdns /var/log/pdns/
 
 echo "* add stub my.cnf file"
 touch /root/.my.cnf
