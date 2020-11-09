@@ -1,5 +1,11 @@
 # Changelog
 
+## 20191127.1
+
+* use latest base image
+* use latest pdns version 4.3.1
+* fix pdns rights
+
 ## 20191127.0
 
 * use latest smartos image 20191127
