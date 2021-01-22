@@ -19,9 +19,13 @@ echo "* Activate munin plugins"
 echo "* Configuring image specific packages.";
 
 groupadd -g 1101 pdns
-useradd -m -s /usr/bin/bash -d /var/run/pdns -u 1101 -g pdns pdns
+useradd -m -s /usr/bin/bash -d /var/lib/pdns -u 1101 -g pdns pdns
 passwd -N pdns
 passwd -d pdns
+chmod 0640 /opt/qutic/libexec/.env
+chown root:pdns /opt/qutic/libexec/.env
+mkdir -p /var/lib/pdns
+chown pdns:pdns /var/lib/pdns
 
 echo "* fix dnsdist smf"
 sed -i \

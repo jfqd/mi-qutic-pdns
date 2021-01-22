@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-
-DOMAINS=$(echo "SELECT name FROM domains WHERE type = 'MASTER'" | /opt/local/bin/mysql --defaults-file=/root/.my.cnf -N)
-
-for DOMAIN in $DOMAINS; do
-  # echo "Sending a notify the given $DOMAIN"
-  /opt/local/bin/pdns_control notify $DOMAIN
-done
