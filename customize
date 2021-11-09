@@ -48,6 +48,10 @@ mkdir -p /var/log/pdns/
 touch /var/log/pdns/pdns.log
 chown -R pdns:pdns /var/log/pdns/
 
+echo "* install ruby gems"
+gem install dotenv || true
+gem install sequel || true
+
 echo "* add stub my.cnf file"
 touch /root/.my.cnf
 chmod 0400 /root/.my.cnf

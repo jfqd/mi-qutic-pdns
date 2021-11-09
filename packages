@@ -6,3 +6,4 @@ powerdns-mysql
 dnsdist
 nginx
 jq
+ruby27-mysql2
