@@ -28,9 +28,6 @@ mkdir -p /var/lib/pdns
 chown pdns:pdns /var/lib/pdns
 
 echo "* fix dnsdist smf"
-sed -i \
-  's#<property_group name="dnsdist" type="application">#<property_group name="application" type="application">#' \
-  /opt/local/lib/svc/manifest/dnsdist.xml
 svccfg import /opt/local/lib/svc/manifest/dnsdist.xml
 
 echo "* fix pdns rights"
