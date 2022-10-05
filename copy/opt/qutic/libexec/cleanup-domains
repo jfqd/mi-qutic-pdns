@@ -23,6 +23,8 @@ domains = DB[:domains].where(type: 'SLAVE').all
 
 domains.each do |domain|
   r = %x[/usr/sbin/dig +short #{domain[:name]} @ns1.qutic.com]
-  puts "delete #{domain[:name]}" if r == ""
-  DB[:domains].where(id: domain[:id]).limit(1).delete
+  if r == ""
+    puts "delete #{domain[:name]}"
+    DB[:domains].where(id: domain[:id]).limit(1).delete
+  end
 end
