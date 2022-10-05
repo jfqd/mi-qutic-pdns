@@ -29,7 +29,6 @@
     "pdns_api_enable":       {"type": "text", "description": "enable pdns api: yes or no"},
     "pdns_api_key":          {"type": "text", "description": "key for pdns api"},
     "pdns_mysql_host":       {"type": "text", "description": "hostname or ip of the first mysql server"},
-    "pdns_mysql_host2":      {"type": "text", "description": "hostname or ip of the second (optional) mysql server"},
     "pdns_mysql_db":         {"type": "text", "description": "pdns mysql database name"},
     "pdns_mysql_user":       {"type": "text", "description": "pdns mysql user"},
     "pdns_mysql_pwd":        {"type": "text", "description": "pdns mysql password"},
