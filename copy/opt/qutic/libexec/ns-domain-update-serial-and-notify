@@ -24,4 +24,5 @@ domains = DB[:domains].where(type: 'MASTER').all
 domains.each do |domain|
   puts "Updating serial on domain: #{domain[:name]}"
   %x[/opt/local/bin/pdnsutil increase-serial #{domain[:name]}]
-  %x[/opt/local/bin/pdns_control notify #{domain[:name]}]end
+  %x[/opt/local/bin/pdns_control notify #{domain[:name]}]
+end
