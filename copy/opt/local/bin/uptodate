@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+# upgrade system
+/opt/local/bin/pkgin -y ug
+/opt/local/bin/pkgin clean
+# fix common issues
+/usr/sbin/svcadm clar nullmailer
+/usr/sbin/svcadm restart nullmailer
+cp /opt/local/src/dnsdist/dnsdist.xml /opt/local/lib/svc/manifest/dnsdist.xml
+cp /opt/local/src/dnsdist/dnsdist /opt/local/lib/svc/method/dnsdist
+/usr/sbin/svccfg import /opt/local/lib/svc/manifest/dnsdist.xml
+/usr/sbin/svcadm clear dnsdist
+/usr/sbin/svcadm restart dnsdist
+/usr/bin/svcs -vx
